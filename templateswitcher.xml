@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.2" type="plugin" group="system" method="upgrade">
+	<name>System – Template Switcher</name>
+	<author>Michael Hendrix</author>
+	<creationDate>20 November 2013</creationDate>
+	<copyright>Copyright (C) 2013 Hendrix Web. All rights reserved.</copyright>
+	<licence>GNU General Public License v2.0</licence>
+	<authorEmail>michael@hendrixweb.net</authorEmail>
+	<authorUrl>http://www.hendrixweb.net</authorUrl>
+	<version>1.3.1</version>
+	<description>plg_templateswitcher_xml_description</description>
+	
+	<scriptfile>install.plg_templateswitcher.php</scriptfile>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				
+				<field name="template" type="sql" description="PLG_TEMPLATESWITCHER_FIELD_TEMPLATE_DESC"
+					label="PLG_TEMPLATESWITCHER_FIELD_TEMPLATE_LABEL"
+					query="SELECT `template` FROM `#__template_styles` WHERE `client_id` = '0' ORDER BY `template` ASC"
+					key_field="template" value_field="template">
+					<option value="">Select a template</option>
+				</field>
+				
+			</fieldset>
+		</fields>
+	</config>
+	
+	<files>
+		<folder>language</folder>
+		<folder>mdetect</folder>
+		<filename plugin="templateswitcher">templateswitcher.php</filename>
+		<filename>index.html</filename>
+	</files>
+	
+	<languages folder="language">
+		<language tag="en-GB">en-GB.plg_system_templateswitcher.ini</language>
+		<language tag="en-GB">en-GB.plg_system_templateswitcher.sys.ini</language>
+	</languages>
+		
+</extension>
